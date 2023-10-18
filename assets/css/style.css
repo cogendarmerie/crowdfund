@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Commissioner", sans-serif;
+  font-size: 16px;
+  background-color: #FAFAFA;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 83px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 23px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+  z-index: 100;
+}
+nav > div:last-child {
+  position: relative;
+}
+nav > div:last-child > div:first-child span {
+  display: block;
+  height: 15px;
+  width: 15px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+nav > div:last-child > div:last-child {
+  position: fixed;
+  top: 88px;
+  right: 24px;
+  left: 24px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 9px;
+}
+nav > div:last-child > div:last-child ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+}
+nav > div:last-child > div:last-child ul li a {
+  display: inline-block;
+  padding: 24px 20px;
+  color: hsl(0, 0%, 0%);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+nav > div:last-child > div:last-child ul > li:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+nav[data-state=open] > div:last-child > div:first-child span {
+  background-image: url("/assets/images/icon-close-menu.svg");
+}
+nav[data-state=open] > div:last-child > div:last-child {
+  display: block;
+}
+nav[data-state=close] > div:last-child > div:first-child span {
+  background-image: url("/assets/images/icon-hamburger.svg");
+}
+nav[data-state=close] > div:last-child > div:last-child {
+  display: none;
+}
+
+header {
+  background-image: url("/assets/images/image-hero-mobile.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+}
+
+@media screen and (min-width: 768px) {
+  header {
+    height: 400px;
+    background-image: url("/assets/images/image-hero-desktop.jpg");
+  }
+}
+.btn {
+  text-decoration: none;
+  border-radius: 100rem;
+  cursor: pointer;
+  display: inline-block;
+  padding: 18px 31px;
+  font-weight: 500;
+  transition: all 0.25s ease;
+  border: none;
+  font-size: 14px;
+}
+.btn-primary {
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(176, 50%, 47%);
+}
+.btn-primary:hover {
+  background-color: hsl(176, 72%, 28%);
+}
+.btn-disabled {
+  color: hsl(0, 0%, 100%);
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+main {
+  padding: 0 25px;
+}
+main > section:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+section {
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 9px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 40px 24px;
+}
+
+section#section-presentation {
+  background-color: hsl(0, 0%, 100%);
+  position: relative;
+  padding-top: 52px;
+  text-align: center;
+  margin-top: -55px;
+}
+section#section-presentation > div:first-child img {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -50%);
+}
+section#section-presentation > div:nth-child(2) h2 {
+  margin: 0;
+}
+section#section-presentation > div:nth-child(2) p {
+  color: hsl(0, 0%, 48%);
+}
+section#section-presentation > div:last-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section#section-presentation > div:last-child > a:first-child {
+  margin-right: 10px;
+}
+
+section#section-stats {
+  text-align: center;
+}
+section#section-stats h2 {
+  font-size: 32px;
+  margin: 0;
+  margin-bottom: 14px;
+}
+section#section-stats p {
+  font-size: 16px;
+  color: hsl(0, 0%, 48%);
+  margin: 0;
+}
+section#section-stats > div:first-child > div {
+  position: relative;
+  padding: 24px 0;
+}
+section#section-stats > div:first-child > div:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+section#section-stats .progress-bar {
+  margin-top: 6px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  background-color: #F4F4F4;
+  height: 12px;
+  border-radius: 100rem;
+  overflow: hidden;
+}
+section#section-stats .progress-bar > div {
+  border-radius: 100rem;
+  background-color: hsl(176, 50%, 47%);
+  height: 100%;
+  width: 78%;
+}/*# sourceMappingURL=style.css.map */
