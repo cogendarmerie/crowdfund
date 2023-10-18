@@ -92,7 +92,7 @@ header {
   cursor: pointer;
   display: inline-block;
   padding: 18px 31px;
-  font-weight: 500;
+  font-weight: 700;
   transition: all 0.25s ease;
   border: none;
   font-size: 14px;
@@ -110,6 +110,9 @@ header {
 }
 
 main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 0 25px;
 }
 main > section:not(:last-child) {
@@ -119,10 +122,19 @@ main > section:not(:last-child) {
 section {
   background-color: hsl(0, 0%, 100%);
   border-radius: 9px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
   padding: 40px 24px;
+  width: 100%;
+}
+section h2 {
+  font-weight: 700;
 }
 
+@media screen and (min-width: 768px) {
+  section {
+    width: 726px;
+  }
+}
 section#section-presentation {
   background-color: hsl(0, 0%, 100%);
   position: relative;
@@ -150,7 +162,27 @@ section#section-presentation > div:last-child {
 section#section-presentation > div:last-child > a:first-child {
   margin-right: 10px;
 }
+section#section-presentation > div:last-child > [data-action=bookmark] span {
+  display: none;
+}
 
+@media screen and (min-width: 768px) {
+  section#section-presentation > div:last-child > [data-action=bookmark] {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 100rem;
+    text-decoration: none;
+    font-weight: 500;
+    color: hsl(0, 0%, 48%);
+    padding-right: 24px;
+  }
+  section#section-presentation > div:last-child > [data-action=bookmark] span {
+    display: inline-block;
+    margin-left: 18px;
+  }
+}
 section#section-stats {
   text-align: center;
 }
@@ -193,4 +225,74 @@ section#section-stats .progress-bar > div {
   background-color: hsl(176, 50%, 47%);
   height: 100%;
   width: 78%;
+}
+
+@media screen and (min-width: 768px) {
+  section#section-stats {
+    text-align: left;
+  }
+  section#section-stats > div:first-child {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  section#section-stats > div:first-child > div:not(:first-child) {
+    margin-left: 46px;
+  }
+  section#section-stats > div:first-child > div:not(:last-child) {
+    padding-right: 46px;
+  }
+  section#section-stats > div:first-child > div:not(:last-child)::after {
+    height: 60px;
+    width: 1px;
+    left: auto;
+    right: 0;
+    transform: translateY(-50%);
+  }
+}
+section#section-about p {
+  color: hsl(0, 0%, 48%);
+}
+section#section-about .cards {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 9px;
+  padding: 25px 24px;
+}
+section#section-about .cards > div:first-child h3 {
+  margin: 0;
+  font-size: 16px;
+}
+section#section-about .cards > div:first-child p {
+  margin: 0;
+  margin-top: 8px;
+  color: hsl(176, 50%, 47%);
+  font-size: 16px;
+}
+section#section-about .cards > div:last-child p span {
+  font-weight: 700;
+  font-size: 26px;
+  color: hsl(0, 0%, 0%);
+}
+section#section-about .cards.outofstock {
+  opacity: 0.5;
+}
+section#section-about .cards.outofstock .btn {
+  cursor: not-allowed;
+}
+section#section-about .cards:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+@media screen and (min-width: 768px) {
+  section#section-about .cards > div:first-child {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  section#section-about .cards > div:last-child {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }/*# sourceMappingURL=style.css.map */
